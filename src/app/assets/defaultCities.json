@@ -1,0 +1,52 @@
+[
+  {
+    "lat": "37.7749295",
+    "lon": "-122.4194155",
+    "place": "San Francisco, CA"
+  },
+  {
+    "lat": "40.712776",
+    "lon": "-74.005974",
+    "place": "New York City, NY"
+  },
+  {
+    "lat": "34.052235",
+    "lon": "-118.243683",
+    "place": "Los Angeles, CA"
+  },
+  {
+    "lat": "41.878113",
+    "lon": "-87.629799",
+    "place": "Chicago, IL"
+  },
+  {
+    "lat": "29.760427",
+    "lon": "-95.369804",
+    "place": "Houston, TX"
+  },
+  {
+    "lat": "33.448376",
+    "lon": "-112.074036",
+    "place": "Phoenix, AZ"
+  },
+  {
+    "lat": "51.507351",
+    "lon": "-0.127758",
+    "place": "London, UK"
+  },
+  {
+    "lat": "48.856613",
+    "lon": "2.352222",
+    "place": "Paris, France"
+  },
+  {
+    "lat": "35.689487",
+    "lon": "139.691711",
+    "place": "Tokyo, Japan"
+  },
+  {
+    "lat": "37.566535",
+    "lon": "126.977969",
+    "place": "Seoul, South Korea"
+  }
+]

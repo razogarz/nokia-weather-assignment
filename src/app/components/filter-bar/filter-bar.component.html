@@ -1,0 +1,13 @@
+<div class="container">
+  <input type="text" class="form-control" id="search" placeholder="Search" (keyup)="searchCity($event)">
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Sort by
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Name</a>
+      <a class="dropdown-item" href="#">Date</a>
+      <a class="dropdown-item" href="#">Temperature</a>
+    </div>
+  </div>
+</div>
