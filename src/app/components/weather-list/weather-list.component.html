@@ -1,9 +1,9 @@
 <div class="container mx-auto">
   <div class="grid grid-cols-3 gap-4">
-    <div *ngFor="let item of cityWeatherData" class="card col-md-3 m-2 rounded-full">
+    <div *ngFor="let item of cityWeatherData.data" class="card bg-amber-200 shadow-xl">
       <div class="card-body bg-amber-300 shadow-xl text-gray-700">
         <h2 class="card-title text-2xl">
-          {{ item.data.name }}
+          {{ item.data.name || 'Unknown' }}
         </h2>
         <div>
           <p class="text-lg">{{ (item.data.main.temp - 273.15).toFixed(1) }}°C</p>

@@ -11,18 +11,16 @@ import {BehaviorSubject, Observable} from "rxjs";
 export class WeatherService {
     apiKey = "e3547987b584216f8db68ffcbe14e9b4";
     defaultCities = JSON.parse(JSON.stringify(defaultCities));
-    dataForCity: PlaceAndWeatherData[] = [];
     dataForCitySubject = new BehaviorSubject<PlaceAndWeatherData[]>([]);
     constructor(private http: HttpClient) {}
 
     getWeather(refresh= false): Observable<PlaceAndWeatherData[]> {
       this.checkIfWeatherInCache();
-      if(this.dataForCity.length > 0 && !refresh) {
+      if(this.dataForCitySubject.value.length > 0 && !refresh) {
         return this.dataForCitySubject.asObservable();
       }
 
       if(refresh) {
-        this.dataForCity = [];
         this.dataForCitySubject.next([]);
         localStorage.removeItem('weatherData');
       }
@@ -30,9 +28,8 @@ export class WeatherService {
       this.defaultCities.forEach((defaultCity: coordObject) => {
         this.http.get<WeatherData>(`https://api.openweathermap.org/data/2.5/weather?lat=${defaultCity.lat}&lon=${defaultCity.lon}&appid=${this.apiKey}`)
           .subscribe((data) => {
-            this.dataForCitySubject.next([...this.dataForCity, {place: data.name, data: data}]);
-            this.dataForCity.push({place: data.name, data: data});
-            localStorage.setItem('weatherData', JSON.stringify(this.dataForCity));
+            this.dataForCitySubject.next([...this.dataForCitySubject.value, {place: data.name, data: data}]);
+            localStorage.setItem('weatherData', JSON.stringify(this.dataForCitySubject.value));
           });
       });
       return this.dataForCitySubject.asObservable();
@@ -41,9 +38,14 @@ export class WeatherService {
     fetchAdditionalByCoords(lat: number, lon: number) {
       const newCity = this.http.get<WeatherData>(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${this.apiKey}`);
       newCity.subscribe((data) => {
-        this.dataForCitySubject.next([...this.dataForCity, {place: data.name, data: data}]);
-        this.dataForCity.push({place: data.name, data: data});
-        localStorage.setItem('weatherData', JSON.stringify(this.dataForCity));
+        let allCities = localStorage.getItem('weatherData');
+        let cities = allCities ? JSON.parse(allCities) : [];
+        if(cities) {
+          cities.push({place: data.name, data: data});
+          localStorage.setItem('weatherData', JSON.stringify(cities));
+          if(this.dataForCitySubject.value.length === cities.length - 1)
+            this.dataForCitySubject.next([...this.dataForCitySubject.value, {place: data.name, data: data}]);
+        }
       });
     }
 
@@ -59,30 +61,28 @@ export class WeatherService {
     sortCities(sortBy: string) {
       switch (sortBy) {
         case 'name':
-          this.dataForCity = this.dataForCity.sort((a, b) => a.place.localeCompare(b.place));
-          this.dataForCitySubject.next(this.dataForCity);
+          let sorted_name = this.dataForCitySubject.value.sort((a, b) => a.place.localeCompare(b.place));
+          this.dataForCitySubject.next(sorted_name);
           break;
         case 'temp':
-          this.dataForCity = this.dataForCity.sort((a, b) => a.data.main.temp - b.data.main.temp);
-          this.dataForCitySubject.next(this.dataForCity);
+          let sorted_temp = this.dataForCitySubject.value.sort((a, b) => a.data.main.temp - b.data.main.temp);
+          this.dataForCitySubject.next(sorted_temp);
           break;
         case 'pressure':
-          this.dataForCity = this.dataForCity.sort((a, b) => a.data.main.pressure - b.data.main.pressure);
-          this.dataForCitySubject.next(this.dataForCity);
+          let sorted_pressure = this.dataForCitySubject.value.sort((a, b) => a.data.main.pressure - b.data.main.pressure);
+          this.dataForCitySubject.next(sorted_pressure);
           break;
-        case 'humidity':
-          this.dataForCity = this.dataForCity.sort((a, b) => a.data.main.humidity - b.data.main.humidity);
-          this.dataForCitySubject.next(this.dataForCity);
+        case 'wind':
+          let sorted_humidity = this.dataForCitySubject.value.sort((a, b) => a.data.wind.speed - b.data.wind.speed);
+          this.dataForCitySubject.next(sorted_humidity);
           break;
       }
     }
 
     checkIfWeatherInCache() {
       let weatherData = localStorage.getItem('weatherData');
-      if(weatherData) {
-        this.dataForCity = JSON.parse(weatherData);
-        this.dataForCitySubject.next(this.dataForCity);
-      }
+      if(weatherData)
+        this.dataForCitySubject.next(JSON.parse(weatherData));
     }
 }
 
