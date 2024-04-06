@@ -1,18 +1,21 @@
-<div class="row">
-  <div class="col-md-4" *ngFor="let item of cityWeatherData">
-    <div class="card text-center mb-3">
-      <h2  class="card-header">
-        {{ item.data.name }}
-      </h2>
-      <div class="card-body">
-        <h5 class="">{{ (item.data.main.temp - 273.15).toFixed(1) }}°C</h5>
-        <p class="card-text">{{ item.data.weather[0].description }}</p>
-        <p class="card-title">{{ item.data.main.pressure }} hPa</p>
-        <p>Wind: {{ item.data.wind.speed }} m/s</p>
-      </div>
-      <div class="card-footer text-muted">
-        {{ item.data.dt * 1000 | date: 'full' }}
+<div class="container mx-auto">
+  <div class="grid grid-cols-3 gap-4">
+    <div *ngFor="let item of cityWeatherData" class="card col-md-3 m-2 rounded-full">
+      <div class="card-body bg-amber-300 shadow-xl text-gray-700">
+        <h2 class="card-title text-2xl">
+          {{ item.data.name }}
+        </h2>
+        <div>
+          <p class="text-lg">{{ (item.data.main.temp - 273.15).toFixed(1) }}°C</p>
+          <p class="text-lg">{{ item.data.weather[0].description }}</p>
+          <p class="text-lg">{{ item.data.main.pressure }} hPa</p>
+          <p class="text-lg">Wind: {{ item.data.wind.speed }} m/s</p>
+        </div>
+        <div class="btn btn-primary">
+          {{ item.data.dt * 1000 | date: 'medium' }}
+        </div>
       </div>
     </div>
   </div>
 </div>
+

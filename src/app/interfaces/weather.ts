@@ -53,6 +53,12 @@ interface WeatherData {
   cod: number;
 }
 
+interface PlaceAndWeatherData {
+  place: string;
+  data: WeatherData;
+}
+
 export {
-  WeatherData
+  WeatherData,
+  PlaceAndWeatherData
 }

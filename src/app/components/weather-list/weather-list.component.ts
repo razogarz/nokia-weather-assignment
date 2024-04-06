@@ -19,6 +19,8 @@ export class WeatherListComponent implements OnInit {
   constructor(private weatherDataService: WeatherService) {}
 
   ngOnInit() {
-    this.cityWeatherData = this.weatherDataService.getWeather();
+    this.weatherDataService.getWeather().subscribe((data) => {
+      this.cityWeatherData = data;
+    });
   }
 }

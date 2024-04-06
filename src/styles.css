@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Merriweather', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DM italic', sans-serif;
+}
+
+@font-face {
+  font-family: 'DM regular';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('./app/assets/fonts/DMSerifDisplay-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DM italic';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('./app/assets/fonts/DMSerifDisplay-Italic.ttf') format('truetype');
+}
+
+
+
