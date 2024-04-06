@@ -1,4 +1,4 @@
-<div class="container mx-auto flex bg-blue-200 m-4 p-4 flex justify-between">
+<div class="md:container md:mx-auto flex flex-col md:flex-row bg-blue-200 my-4 p-4 flex justify-between">
   <div class="flex flex-wrap items-center justify-center flex-col lg:flex-row">
     <input type="text" id="search" placeholder="Search" (keyup)="searchCity($event)" class="p-2 border rounded w-full">
     <div class="dropdown w-full">
@@ -13,7 +13,7 @@
     <button (click)="refreshData()" class="px-4 py-2 bg-green-500 text-white w-full">Refresh</button>
   </div>
 
-  <div class="flex flex-wrap justify-center ml-8 flex-col flex-grow ">
+  <div class="flex flex-wrap justify-center md:ml-8 flex-col flex-grow mt-5 md:mt-0">
     <h5 class="text-3xl">Add City</h5>
     <label class="input input-bordered flex items-center gap-2">
       Latitude
