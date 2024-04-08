@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {PlaceAndWeatherData, WeatherData} from "../../interfaces/weather";
 import {HttpClient} from "@angular/common/http";
-import defaultCities from "../../assets/defaultCities.json";
+import defaultCities from "../../../assets/defaultCities.json";
 import coordObject from "../../interfaces/cityAndLocation";
 import {BehaviorSubject, Observable} from "rxjs";
 
