@@ -1,0 +1,31 @@
+<div class="md:container md:mx-auto flex flex-col md:flex-row bg-blue-200 my-4 p-4 flex justify-between">
+  <div class="md:w-1/4 flex flex-wrap items-center justify-center flex-col lg:flex-row">
+    <input type="text" id="search" placeholder="Search" (keyup)="searchCity($event)" class="p-2 border rounded w-full">
+    <div class="dropdown w-full">
+      <div tabindex="0" role="button" class="btn my-2 w-full">{{sortType}}</div>
+      <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+        <li><button (click)="sortCity('name')">Name</button></li>
+        <li><button (click)="sortCity('pressure')">Pressure</button></li>
+        <li><button (click)="sortCity('temp')">Temperature</button></li>
+        <li><button (click)="sortCity('wind')">Wind</button></li>
+      </ul>
+    </div>
+    <button (click)="refreshData()" class="px-4 py-2 bg-green-500 text-white w-full">Refresh</button>
+  </div>
+
+  <div class="md:w-3/4 flex flex-wrap justify-center md:ml-8 flex-col mt-5 md:mt-0">
+    <h5 class="text-3xl">Add City</h5>
+    <label class="input input-bordered flex items-center gap-2">
+      Latitude
+      <input type="number" min="-180" max="180" class="grow" placeholder="0" [(ngModel)]="city.lat">
+    </label>
+    <label class="input input-bordered flex items-center gap-2">
+      Longitude
+      <input type="number" min="-180" max="180" class="grow" placeholder="0" [(ngModel)]="city.lon">
+    </label>
+    <button type="button" (click)="addCity()" class="px-4 py-2 bg-blue-500 text-white text-xl rounded">Add</button>
+  </div>
+</div>
+
+
+

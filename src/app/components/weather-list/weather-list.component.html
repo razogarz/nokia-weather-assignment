@@ -1,0 +1,21 @@
+<div class="container mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div *ngFor="let item of cityWeatherData.data" class="card bg-amber-200 shadow-xl">
+      <div class="card-body bg-amber-300 shadow-xl text-gray-700">
+        <h2 class="card-title md:text-2xl">
+          {{ item.data.name || 'Unknown' }}, {{ item.data.sys.country || 'Country unknown' }}
+        </h2>
+        <div>
+          <p class="text-lg">{{ (item.data.main.temp - 273.15).toFixed(1) }}°C</p>
+          <p class="text-lg">{{ item.data.weather[0].description }}</p>
+          <p class="text-lg">{{ item.data.main.pressure }} hPa</p>
+          <p class="text-lg">Wind: {{ item.data.wind.speed }} m/s</p>
+        </div>
+        <div class="btn btn-primary">
+          {{ item.data.dt * 1000 | date: 'medium' }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
