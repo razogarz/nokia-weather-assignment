@@ -14,7 +14,7 @@ import {FormsModule} from "@angular/forms";
 })
 export class FilterBarComponent {
     city = {lat: 0, lon: 0};
-  sortType: string = "Sort by";
+  sortType: string = "Place name";
     constructor(private weatherDataService: WeatherService) {}
 
     searchCity(event: any) {

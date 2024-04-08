@@ -2,7 +2,7 @@
   <div class="md:w-1/4 flex flex-wrap items-center justify-center flex-col lg:flex-row">
     <input type="text" id="search" placeholder="Search" (keyup)="searchCity($event)" class="p-2 border rounded w-full">
     <div class="dropdown w-full">
-      <div tabindex="0" role="button" class="btn my-2 w-full">{{sortType}}</div>
+      <div tabindex="0" role="button" class="btn my-2 w-full">Sort by: {{sortType}}</div>
       <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
         <li><button (click)="sortCity('name')">Name</button></li>
         <li><button (click)="sortCity('pressure')">Pressure</button></li>
