@@ -56,6 +56,10 @@ export class WeatherService {
         let searchResult = cities.filter((cityData: PlaceAndWeatherData) => cityData.place.toLowerCase().includes(city.toLowerCase()));
         this.dataForCitySubject.next(searchResult);
       }
+      else {
+        let searchResult = this.dataForCitySubject.value.filter((cityData: PlaceAndWeatherData) => cityData.place.toLowerCase().includes(city.toLowerCase()));
+        this.dataForCitySubject.next(searchResult);
+      }
     }
 
     sortCities(sortBy: string) {

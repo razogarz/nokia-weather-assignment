@@ -1,0 +1,235 @@
+[
+  {
+    "place": "San Francisco",
+    "data": {
+      "coord": {
+        "lon": -122.4194,
+        "lat": 37.7749
+      },
+      "weather": [
+        {
+          "id": 802,
+          "main": "Clouds",
+          "description": "scattered clouds",
+          "icon": "03d"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": 287.09,
+        "feels_like": 285.98,
+        "temp_min": 285.02,
+        "temp_max": 289.99,
+        "pressure": 1026,
+        "humidity": 55
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 6.69,
+        "deg": 270,
+        "gust": 8.75
+      },
+      "clouds": {
+        "all": 40
+      },
+      "dt": 1712434020,
+      "sys": {
+        "type": 2,
+        "id": 2017837,
+        "country": "US",
+        "sunrise": 1712411184,
+        "sunset": 1712457419
+      },
+      "timezone": -25200,
+      "id": 5391959,
+      "name": "San Francisco",
+      "cod": 200
+    }
+  },
+  {
+    "place": "Chicago",
+    "data": {
+      "coord": {
+        "lon": -87.6283,
+        "lat": 41.8805
+      },
+      "weather": [
+        {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": 283.28,
+        "feels_like": 281.6,
+        "temp_min": 280.53,
+        "temp_max": 287.23,
+        "pressure": 1024,
+        "humidity": 48
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 5.14,
+        "deg": 90
+      },
+      "clouds": {
+        "all": 20
+      },
+      "dt": 1712433843,
+      "sys": {
+        "type": 2,
+        "id": 2005153,
+        "country": "US",
+        "sunrise": 1712402629,
+        "sunset": 1712449277
+      },
+      "timezone": -18000,
+      "id": 4887398,
+      "name": "Chicago",
+      "cod": 200
+    }
+  },
+  {
+    "place": "Los Angeles",
+    "data": {
+      "coord": {
+        "lon": -118.2437,
+        "lat": 34.0522
+      },
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01d"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": 289.95,
+        "feels_like": 288.78,
+        "temp_min": 287.25,
+        "temp_max": 292.52,
+        "pressure": 1027,
+        "humidity": 42
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 2.57,
+        "deg": 190
+      },
+      "clouds": {
+        "all": 0
+      },
+      "dt": 1712434092,
+      "sys": {
+        "type": 1,
+        "id": 3694,
+        "country": "US",
+        "sunrise": 1712410357,
+        "sunset": 1712456242
+      },
+      "timezone": -25200,
+      "id": 5368361,
+      "name": "Los Angeles",
+      "cod": 200
+    }
+  },
+  {
+    "place": "Phoenix",
+    "data": {
+      "coord": {
+        "lon": -112.074,
+        "lat": 33.4484
+      },
+      "weather": [
+        {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": 290.24,
+        "feels_like": 288.76,
+        "temp_min": 288.41,
+        "temp_max": 292.23,
+        "pressure": 1021,
+        "humidity": 29
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 4.63,
+        "deg": 270,
+        "gust": 8.23
+      },
+      "clouds": {
+        "all": 20
+      },
+      "dt": 1712434063,
+      "sys": {
+        "type": 2,
+        "id": 2008537,
+        "country": "US",
+        "sunrise": 1712408904,
+        "sunset": 1712454734
+      },
+      "timezone": -25200,
+      "id": 5308655,
+      "name": "Phoenix",
+      "cod": 200
+    }
+  },
+  {
+    "place": "Houston",
+    "data": {
+      "coord": {
+        "lon": -95.3698,
+        "lat": 29.7604
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "overcast clouds",
+          "icon": "04d"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": 298.64,
+        "feels_like": 298.92,
+        "temp_min": 296.96,
+        "temp_max": 300.04,
+        "pressure": 1011,
+        "humidity": 64
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 11.32,
+        "deg": 140,
+        "gust": 19.55
+      },
+      "clouds": {
+        "all": 100
+      },
+      "dt": 1712434208,
+      "sys": {
+        "type": 2,
+        "id": 2001415,
+        "country": "US",
+        "sunrise": 1712405052,
+        "sunset": 1712450569
+      },
+      "timezone": -18000,
+      "id": 4699066,
+      "name": "Houston",
+      "cod": 200
+    }
+  }
+]

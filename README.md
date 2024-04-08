@@ -8,8 +8,11 @@ Yet, it taught me a lot about Angular and its features. I am happy with the resu
 ## Hosting
 I have hosted the project on Netlify. You can access it [here](https://poetic-clafoutis-0745de.netlify.app).
 
-Lighthouse score:
+Lighthouse score: </br>
 ![Lighthouse score](./src/assets/lighthouse.png)
+
+Test results: </br>
+![Test results](./src/assets/karmaTests.png)
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
