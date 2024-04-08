@@ -85,5 +85,3 @@ export class WeatherService {
         this.dataForCitySubject.next(JSON.parse(weatherData));
     }
 }
-
-

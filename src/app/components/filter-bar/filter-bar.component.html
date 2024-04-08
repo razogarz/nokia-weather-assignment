@@ -17,11 +17,11 @@
     <h5 class="text-3xl">Add City</h5>
     <label class="input input-bordered flex items-center gap-2">
       Latitude
-      <input type="text" class="grow" placeholder="0" [(ngModel)]="city.lat">
+      <input type="number" min="-180" max="180" class="grow" placeholder="0" [(ngModel)]="city.lat">
     </label>
     <label class="input input-bordered flex items-center gap-2">
       Longitude
-      <input type="text" class="grow" placeholder="0" [(ngModel)]="city.lon">
+      <input type="number" min="-180" max="180" class="grow" placeholder="0" [(ngModel)]="city.lon">
     </label>
     <button type="button" (click)="addCity()" class="px-4 py-2 bg-blue-500 text-white text-xl rounded">Add</button>
   </div>

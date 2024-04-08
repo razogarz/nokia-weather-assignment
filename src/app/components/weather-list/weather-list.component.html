@@ -3,7 +3,7 @@
     <div *ngFor="let item of cityWeatherData.data" class="card bg-amber-200 shadow-xl">
       <div class="card-body bg-amber-300 shadow-xl text-gray-700">
         <h2 class="card-title md:text-2xl">
-          {{ item.data.name || 'Unknown' }}
+          {{ item.data.name || 'Unknown' }}, {{ item.data.sys.country || 'Country unknown' }}
         </h2>
         <div>
           <p class="text-lg">{{ (item.data.main.temp - 273.15).toFixed(1) }}°C</p>
