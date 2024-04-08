@@ -7,7 +7,7 @@ Yet, it taught me a lot about Angular and its features. I am happy with the resu
 
 ## Hosting
 I have hosted the project on Netlify. You can access it [here](https://poetic-clafoutis-0745de.netlify.app).
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/03f19ed4-8b3f-4e69-ad80-088b70106947/deploy-status)](https://app.netlify.com/sites/weatherappynokia/deploys)</br>
 Lighthouse score: </br>
 ![Lighthouse score](./src/assets/lighthouse.png)
 
