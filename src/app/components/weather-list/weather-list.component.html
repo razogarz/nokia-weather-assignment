@@ -11,7 +11,7 @@
           <p class="text-lg">{{ item.data.main.pressure }} hPa</p>
           <p class="text-lg">Wind: {{ item.data.wind.speed }} m/s</p>
         </div>
-        <div class="btn btn-primary bg-blue-700">
+        <div class="btn btn-primary bg-blue-700 text-gray-100">
           {{ item.data.dt * 1000 | date: 'medium' }}
         </div>
       </div>
